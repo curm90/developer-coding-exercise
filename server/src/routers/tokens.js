@@ -1,7 +1,8 @@
+require('dotenv').config();
 const router = require('express').Router();
 const rp = require('request-promise');
 
-router.get('/', async (req, res) => {
+router.get('/tokens', async (req, res) => {
   const requestOptions = {
     method: 'GET',
     uri: 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest',
@@ -25,3 +26,5 @@ router.get('/', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
+module.exports = router;
