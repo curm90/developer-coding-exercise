@@ -1,0 +1,32 @@
+.tokenRow {
+  display: flex;
+  justify-items: start;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  border-bottom: 1px solid #dcdcdc;
+  width: 100%;
+}
+
+.tokenRank {
+  display: flex;
+  align-items: center;
+  padding-right: 2rem;
+  flex: 1;
+}
+
+.token {
+  display: flex;
+  align-items: center;
+  flex: 4;
+}
+
+.tokenData {
+  display: flex;
+  justify-content: space-between;
+  flex: 8;
+}
+
+.tokenData > p {
+  flex: 1;
+}
