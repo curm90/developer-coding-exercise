@@ -14,8 +14,10 @@ function App() {
 
   const fetchtokens = async () => {
     const { data } = await axios.get('/api/tokens');
+    const favorites = await axios.get('/api/favorites');
 
     setTokens(data.data);
+    setFavoriteTokens(favorites.data);
   };
 
   useEffect(() => {
@@ -31,23 +33,25 @@ function App() {
     token.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const addToFavorites = (token) => {
+  const addToFavorites = async (token) => {
     const favoritesCopy = favoriteTokens;
 
     const tokenExists = favoritesCopy.find((tkn) => token.id === tkn.id);
 
     if (!tokenExists) {
       favoriteTokens.push(token);
+      await axios.post('/api/favorites', token);
       setFavoriteTokens([...favoritesCopy]);
     }
   };
 
-  const removeFromFavorites = (id) => {
+  const removeFromFavorites = async (id) => {
     const favoritesCopy = favoriteTokens;
     const index = favoritesCopy.findIndex((token) => token.id === id);
 
     if (index >= 0) {
       favoritesCopy.splice(index, 1);
+      await axios.delete('/api/favorites/:id');
     }
 
     setFavoriteTokens([...favoritesCopy]);
