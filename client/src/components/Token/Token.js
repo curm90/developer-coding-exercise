@@ -1,5 +1,5 @@
 import React from 'react';
-import { AiOutlineStar } from 'react-icons/ai';
+import { AiOutlineStar, AiFillStar } from 'react-icons/ai';
 
 const Token = ({
   id,
@@ -11,6 +11,8 @@ const Token = ({
   marketcap,
   volume,
   addToFavorites,
+  removeFromFavorites,
+  favoriteIds,
 }) => {
   const tokenToAdd = {
     id,
@@ -28,7 +30,11 @@ const Token = ({
       <div>
         <div>
           <div>
-            <AiOutlineStar onClick={() => addToFavorites(tokenToAdd)} />
+            {favoriteIds.includes(id) ? (
+              <AiFillStar onClick={() => removeFromFavorites(id)} />
+            ) : (
+              <AiOutlineStar onClick={() => addToFavorites(tokenToAdd)} />
+            )}
           </div>
           <p>{rank}</p>
         </div>

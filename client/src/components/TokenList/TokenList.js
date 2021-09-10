@@ -1,7 +1,12 @@
 import React from 'react';
 import Token from '../Token';
 
-const TokenList = ({ filteredTokens, addToFavorites }) => {
+const TokenList = ({
+  filteredTokens,
+  addToFavorites,
+  removeFromFavorites,
+  favoriteIds,
+}) => {
   return (
     <div>
       {filteredTokens.map((token) => (
@@ -16,6 +21,8 @@ const TokenList = ({ filteredTokens, addToFavorites }) => {
           marketcap={token.quote.USD.market_cap}
           volume={token.quote.USD.volume_24h}
           addToFavorites={addToFavorites}
+          removeFromFavorites={removeFromFavorites}
+          favoriteIds={favoriteIds}
         />
       ))}
     </div>
