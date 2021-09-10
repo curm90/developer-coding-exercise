@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './App.css';
 import TokenList from './components/TokenList/TokenList';
 import SearchInput from './components/SearchInput';
 
@@ -8,6 +7,7 @@ const baseUrl = 'http://localhost:5000';
 
 function App() {
   const [tokens, setTokens] = useState([]);
+  const [favoriteTokens, setFavoriteTokens] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
   const fetchtokens = async () => {
@@ -16,7 +16,7 @@ function App() {
     setTokens(data.data);
   };
 
-  console.log(tokens);
+  console.log(favoriteTokens);
 
   useEffect(() => {
     fetchtokens();
@@ -30,11 +30,27 @@ function App() {
     token.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const addToFavorites = (token) => {
+    const favoritesCopy = favoriteTokens;
+
+    const tokenExists = favoritesCopy.find((tkn) => token.id === tkn.id);
+
+    console.log(tokenExists);
+
+    if (!tokenExists) {
+      favoriteTokens.push(token);
+      setFavoriteTokens([...favoritesCopy]);
+    }
+  };
+
   return (
     <div className='App'>
       <h1>CryptoCurrency Tracker</h1>
       <SearchInput handleChange={handleChange} />
-      <TokenList filteredTokens={filteredTokens} />
+      <TokenList
+        addToFavorites={addToFavorites}
+        filteredTokens={filteredTokens}
+      />
     </div>
   );
 }
