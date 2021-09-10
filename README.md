@@ -1,46 +1,70 @@
-# Full Stack Developer Coding Exercise
-A coding exercise to assess the competency of candidates.
+# Getting Started with Create React App
 
-## About us
-Synthetix has a very competent team of software engineers that develops high quality and responsive SaaS applications for many clients around the globe.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Context
-Thanks for applying to Full Stack Developer position at Synthetix.
+## Available Scripts
 
-To be able to find right talents, we recommend candidates to finish the following coding exercise.
+In the project directory, you can run:
 
-Thanks for your collaboration. We are looking forward to have you on board and share a great experience together. 
+### `yarn start`
 
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Coding exercise
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-We'd like you to use an API from  [apilist.fun](https://apilist.fun)  to make a very simple application based around it showcasing all of below technologies:
+### `yarn test`
 
-1.  HTML, CSS, and JavaScript (Extra points for Vue.js, React, or Angular2)
-2.  Programming languages (PHP, Node.JS)
-3.  Databases (Relational & Non-Relational)
-4.  Version control (Git)
-5.  Deployment and hosting (any cloud provider - extra points for AWS and automated deployment)
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Please feel free to select any of the above platforms that you are most comfortable with, if you are not comfortable with the technologies listed, please speak to your Synthetix contact to see if you are able to use an alternative.
+### `yarn build`
 
-Once you have completed the exercise either email us a link to your forked repo or create a pull request to this repository. Please don’t include any  `node_modules`  folders, we'll regenerate dependencies as part running the code.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-If we can’t figure out how to get your application running, it’s been a waste of your time, so please include any instructions we might need to launch it in the `instructions.md` file.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-If you are hosting the code yourself please also provide us with a link or instructions on how to access it.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Considerations
-Please take the following into the consideration as much as you can while developing the solution:
+### `yarn eject`
 
-- Simplicity
-- Reusability
-- Scalability
-- Performance
-- Usability
-- Code quality
-- Design patterns and best practices
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-We think this task should take about 3-5 hours. We respect your time far too much to ask for more than that. If you don’t finish, that’s fine, we’ll talk through what you have completed.
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Please ask any questions you may have of your Synthetix contact. This is not a test of your ability to understand our written instructions, it really is just an opportunity to write some code.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `yarn build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

@@ -1,23 +1,12 @@
-require('../db/config');
-const express = require('express');
-const cors = require('cors');
-const tokensRouter = require('./routers/tokens');
-const favoritesRouter = require('./routers/favorites');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import 'normalize.css';
+import './index.css';
+import App from './App';
 
-const PORT = process.env.PORT || 5000;
-
-const server = express();
-
-server.use(cors());
-server.use(express.json());
-
-server.use('/api', tokensRouter);
-server.use('/api', favoritesRouter);
-
-server.get('/', (req, res) => {
-  res.send('Hello world');
-});
-
-server.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
-});
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
