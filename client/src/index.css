@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+html {
+  font-size: 62.5%;
+  font-family: 'Lato', sans-serif;
+}
+
+.App {
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.title {
+  text-align: center;
+  margin: 5rem 0;
+  font-size: 3rem;
+}

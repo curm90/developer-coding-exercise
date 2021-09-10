@@ -1,5 +1,6 @@
 import React from 'react';
 import { AiOutlineStar, AiFillStar } from 'react-icons/ai';
+import styles from './index.module.css';
 
 const Token = ({
   id,
@@ -25,26 +26,37 @@ const Token = ({
     volume,
   };
 
+  const priceUpStyles = styles.tokenPriceUp;
+  const priceDownStyles = styles.tokenPriceDown;
+
   return (
-    <div>
-      <div>
-        <div>
-          <div>
+    <div className={styles.container}>
+      <div className={styles.tokenRow}>
+        <div className={styles.tokenListing}>
+          <div className={styles.tokenFav}>
             {favoriteIds.includes(id) ? (
-              <AiFillStar onClick={() => removeFromFavorites(id)} />
+              <AiFillStar
+                className={styles.tokenFavIcon}
+                onClick={() => removeFromFavorites(id)}
+              />
             ) : (
-              <AiOutlineStar onClick={() => addToFavorites(tokenToAdd)} />
+              <AiOutlineStar
+                className={styles.tokenFavIcon}
+                onClick={() => addToFavorites(tokenToAdd)}
+              />
             )}
           </div>
-          <p>{rank}</p>
+          <p className={styles.tokenRank}>{rank}</p>
         </div>
-        <div>
-          <h3>{name}</h3>
-          <p>{symbol}</p>
+        <div className={styles.token}>
+          <h3 className={styles.tokenName}>{name}</h3>
+          <p className={styles.tokenSymbol}>{symbol}</p>
         </div>
-        <div>
-          <p>${price.toFixed(2)}</p>
-          <p>{priceChange.toFixed(2)}%</p>
+        <div className={styles.tokenData}>
+          <p className={styles.tokenPrice}>${price.toFixed(2)}</p>
+          <p className={priceChange <= 0 ? priceDownStyles : priceUpStyles}>
+            {priceChange.toFixed(2)}%
+          </p>
           <p>${marketcap.toLocaleString()}</p>
           <p>${volume.toLocaleString()}</p>
         </div>

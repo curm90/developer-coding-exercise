@@ -1,10 +1,11 @@
 import React from 'react';
+import styles from './index.module.css';
 
 const SearchInput = ({ handleChange }) => {
   return (
-    <div>
+    <div className={styles.search}>
       <input
-        type='search'
+        className={styles.searchInput}
         placeholder='Search for a token...'
         onChange={handleChange}
       />

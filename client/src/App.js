@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import axios from './utils/axios';
 import TokenList from './components/TokenList/TokenList';
 import SearchInput from './components/SearchInput';
-
-const baseUrl = 'http://localhost:5000';
 
 function App() {
   const [tokens, setTokens] = useState([]);
@@ -11,11 +9,11 @@ function App() {
   const [searchTerm, setSearchTerm] = useState('');
 
   // Get an array of ids to use to check whether or not to
-  // show outlined or filled favorites star
+  // show outlined or filled favorites icon
   const favoriteIds = favoriteTokens.map((token) => token.id);
 
   const fetchtokens = async () => {
-    const { data } = await axios.get(`${baseUrl}/api/tokens`);
+    const { data } = await axios.get('/api/tokens');
 
     setTokens(data.data);
   };
@@ -46,7 +44,6 @@ function App() {
 
   const removeFromFavorites = (id) => {
     const favoritesCopy = favoriteTokens;
-
     const index = favoritesCopy.findIndex((token) => token.id === id);
 
     if (index >= 0) {
@@ -58,7 +55,7 @@ function App() {
 
   return (
     <div className='App'>
-      <h1>CryptoCurrency Tracker</h1>
+      <h1 className='title'>CryptoCurrency Tracker</h1>
       <SearchInput handleChange={handleChange} />
       <TokenList
         addToFavorites={addToFavorites}

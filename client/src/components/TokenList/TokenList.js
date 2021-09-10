@@ -1,5 +1,7 @@
 import React from 'react';
+import TokenHeaders from '../TokenHeaders';
 import Token from '../Token';
+import styles from './index.module.css';
 
 const TokenList = ({
   filteredTokens,
@@ -8,7 +10,8 @@ const TokenList = ({
   favoriteIds,
 }) => {
   return (
-    <div>
+    <div className={styles.tokenList}>
+      <TokenHeaders />
       {filteredTokens.map((token) => (
         <Token
           key={token.id}
