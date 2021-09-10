@@ -1,10 +1,10 @@
 import React from 'react';
 import Token from '../Token';
 
-const TokenList = ({ tokens }) => {
+const TokenList = ({ filteredTokens }) => {
   return (
     <div>
-      {tokens.map((token) => (
+      {filteredTokens.map((token) => (
         <Token
           key={token.id}
           rank={token.cmc_rank}
