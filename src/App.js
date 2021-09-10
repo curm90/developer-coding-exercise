@@ -58,15 +58,19 @@ function App() {
   };
 
   return (
-    <div className='App'>
-      <h1 className='title'>CryptoCurrency Tracker</h1>
+    <div className="App">
+      <h1 className="title">CryptoCurrency Tracker</h1>
       <SearchInput handleChange={handleChange} />
-      <TokenList
-        addToFavorites={addToFavorites}
-        filteredTokens={filteredTokens}
-        removeFromFavorites={removeFromFavorites}
-        favoriteIds={favoriteIds}
-      />
+      {tokens.length === 0 ? (
+        <p className="loader">Fetching Currencies...</p>
+      ) : (
+        <TokenList
+          addToFavorites={addToFavorites}
+          filteredTokens={filteredTokens}
+          removeFromFavorites={removeFromFavorites}
+          favoriteIds={favoriteIds}
+        />
+      )}
     </div>
   );
 }
